@@ -1,0 +1,23 @@
+### model
+model_name_or_path: saves/multilingpot.codellama
+
+### method
+stage: sft
+do_predict: true
+finetuning_type: full
+
+### dataset
+eval_dataset: testset
+template: llama2
+cutoff_len: 1024
+overwrite_cache: true
+
+### output
+output_dir: saves/test/predict
+overwrite_output_dir: true
+overwrite_cache: true
+
+### eval
+preprocessing_num_workers: 8
+per_device_eval_batch_size: 4
+predict_with_generate: true
